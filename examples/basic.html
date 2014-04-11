@@ -59,7 +59,7 @@
 	var ghost	= new THREEx.Pacman({
 		shape	: 'ghost',
 		text	: 'El jeje',
-		color	: '#ff0077'
+		color	: '#aa44FF'
 	})
 	ghost.position.x= 1.5
 	scene.add(ghost)
@@ -75,7 +75,8 @@
 	onRenderFcts.push(function(delta, now){
 		camera.position.x += (mouse.x*5 - camera.position.x) * (delta*3)
 		camera.position.y += (mouse.y*5 - camera.position.y) * (delta*3)
-		camera.lookAt( scene.position )
+		var target	= new THREE.Vector3(0,0.2,0)
+		camera.lookAt( target )
 	})
 
 
